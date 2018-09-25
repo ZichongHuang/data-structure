@@ -13,6 +13,10 @@ namespace stackApp
         private int frontIndex;
         private int rearIndex;
 
+        /// <summary>
+        /// 创建一个队列
+        /// </summary>
+        /// <param name="length">队列长度</param>
         public queue(int length)
         {
             queueArray = new object[length];
@@ -20,6 +24,12 @@ namespace stackApp
             rearIndex = 0;
         }
 
+        /// <summary>
+        /// 移动指针
+        /// </summary>
+        /// <param name="index">指针</param>
+        /// <param name="move">移动量</param>
+        /// <returns></returns>
         private int moveFlag(int index,int move)
         {
             int tempIndex;
@@ -35,7 +45,12 @@ namespace stackApp
             return tempIndex;
         }
 
-        public int itemIn(object item)
+        /// <summary>
+        /// 在队尾插入一个项
+        /// </summary>
+        /// <param name="item">插入项</param>
+        /// <returns></returns>
+        public int enQueue(object item)
         {
             if (queueArray[rearIndex]==null)
             {
@@ -49,7 +64,11 @@ namespace stackApp
             }
         }
 
-        public object itemOut()
+        /// <summary>
+        /// 在队头取出一个项
+        /// </summary>
+        /// <returns>取出项</returns>
+        public object deQueue()
         {
             if(!(queueArray[frontIndex]==null))
             {
@@ -64,11 +83,5 @@ namespace stackApp
                 return -1;
             }
         }
-
-
-
-
-
-
     }
 }

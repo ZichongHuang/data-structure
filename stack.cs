@@ -11,13 +11,22 @@ namespace stackApp
     {
         private ArrayList stackArray;
 
+        /// <summary>
+        /// 创建一个栈
+        /// </summary>
+        /// <param name="mostLength">栈的长度</param>
         public stack(int mostLength)
         {
             stackArray = new ArrayList();
             stackArray.Capacity = mostLength;
         }
 
-        public int itemIn(object item)
+        /// <summary>
+        /// 向栈顶添加一个项
+        /// </summary>
+        /// <param name="item">添加项</param>
+        /// <returns></returns>
+        public int push(object item)
         {
             if (stackArray.Count < stackArray.Capacity)
             {
@@ -30,7 +39,12 @@ namespace stackApp
             }
         }
 
-        public int itemForceIn(object item)
+        /// <summary>
+        /// 强制向栈顶添加一个项
+        /// </summary>
+        /// <param name="item">添加项</param>
+        /// <returns></returns>
+        public int forcePush(object item)
         {
             if (stackArray.Count < stackArray.Capacity)
             {
@@ -45,7 +59,11 @@ namespace stackApp
             }
         }
 
-        public object itemOut()
+        /// <summary>
+        /// 从栈顶取出一个项
+        /// </summary>
+        /// <returns></returns>
+        public object pop()
         {
             if (stackArray.Count != 0)
             {
@@ -59,11 +77,20 @@ namespace stackApp
             }
         }
 
+        /// <summary>
+        /// 获取栈的长度
+        /// </summary>
+        /// <returns></returns>
         public int count()
         {
             return stackArray.Count;
         }
 
+        /// <summary>
+        /// 改变栈的最大长度
+        /// </summary>
+        /// <param name="length"></param>
+        /// <returns></returns>
         public int changeLength(int length)
         {
             if(length>stackArray.Count)
