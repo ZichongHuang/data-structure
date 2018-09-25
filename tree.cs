@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Text;
-using System.Threading.Tasks;
-using System.Collections;
 
 namespace stackApp
 {
@@ -177,9 +173,61 @@ namespace stackApp
                 //层读取结束
                 treeNode.Append("\n");
             }
-
             return treeNode.ToString();
         }
 
+        /// <summary>
+        /// 保存树为文件
+        /// </summary>
+        /// <param name="path">文件路径</param>
+        /// <returns></returns>
+        public int save(string path)
+        {
+
+            XmlW XmlFile = new XmlW();
+            foreach (List<node> layer in treeList)
+            {
+                foreach (node node in layer)
+                {
+                    if (node.getParent() != null)
+                    {
+                        XmlFile.enNode(node.readName(), node.getParent().readName(), node.readLayerNum());
+                    }
+                    else
+                    {
+                        XmlFile.enNode(node.readName(),"null", node.readLayerNum());
+                    }
+                }
+            }
+            XmlFile.save(path);
+            return 0;
+        }
+
+        /// <summary>
+        /// 从文件读取树
+        /// </summary>
+        /// <param name="path">文件路径</param>
+        /// <returns></returns>
+        public int load(string path)
+        {
+            XmlR xmlR = new XmlR(path);
+            string[] temp = new string[3];
+            for (; ; )
+            {
+                temp = xmlR.getNodeInfo();
+                if (temp == null)
+                {
+                    break;
+                }
+                else
+                {
+                    if (temp[0] != "root")
+                    {
+                        addNode(findNode(temp[1], int.Parse(temp[2]) - 1), temp[0]);
+                    }
+                }
+            }
+            return 0;
+        }
     }
 }

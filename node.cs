@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Collections;
+﻿using System.Collections.Generic;
 
 namespace stackApp
 {
@@ -24,6 +19,7 @@ namespace stackApp
             this.name = name;
             layerNum = -1;
             childs = new List<node>();
+            parent = null;
         }
 
         /// <summary>

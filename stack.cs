@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Collections;
+﻿using System.Collections;
 
 namespace stackApp
 {
@@ -17,8 +12,10 @@ namespace stackApp
         /// <param name="mostLength">栈的长度</param>
         public stack(int mostLength)
         {
-            stackArray = new ArrayList();
-            stackArray.Capacity = mostLength;
+            stackArray = new ArrayList
+            {
+                Capacity = mostLength
+            };
         }
 
         /// <summary>
