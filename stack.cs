@@ -1,6 +1,6 @@
 ﻿using System.Collections;
 
-namespace stackApp
+namespace DataStructure
 {
     class stack
     {

@@ -1,4 +1,4 @@
-﻿namespace stackApp
+﻿namespace DataStructure
 {
     class queue
     {

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace stackApp
+namespace DataStructure
 {
     class node
     {

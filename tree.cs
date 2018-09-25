@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Text;
 
-namespace stackApp
+namespace DataStructure
 {
     class tree
     {
